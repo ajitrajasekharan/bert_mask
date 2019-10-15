@@ -8,8 +8,8 @@ We can use this for a variety of tasks
 * In general any task where the sentence context of a word/phrase would be useful. 
 
 # Install steps
-*Install pytorch first. This link (https://github.com/ajitrajasekharan/multi_gpu_test)   has installation instructions for pytorch
-*Activate the environment if using conda
+* Install pytorch first. This link (https://github.com/ajitrajasekharan/multi_gpu_test)   has installation instructions for pytorch
+* Activate the environment if using conda
 
 # Usage 
 * python mask_word.py
