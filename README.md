@@ -13,13 +13,16 @@ We can use this for a variety of tasks
 # Usage 
 * python mask_word.py
 
+# Sample outputs
+A sentence "He went to prison _cell_ with his _cell_ phone to extract blood _cell_ samples from inmates" with the word cell having different senses. 
+
 ![Output of mask_word.py - 1 of 3](1.png) 
 
 ![Output of mask_word.py - 2 of 3](2.png) 
 
 ![Output of mask_word.py - 3 of 3](3.png) 
 
-The neighbors for the word "cell" in the sentence above are different for the different contexts. Note all neighbors are words in BERT vocab. This test was done using pretrained model - bert-base-cased
+The neighbors for the word "cell" in the sentence above are different for the different contexts. Note all displayed neighbors are words in BERT vocab. This test was done using pretrained model - bert-base-cased
 
 
 # License
