@@ -13,7 +13,11 @@ We can use this for a variety of tasks
 # Usage 
 * python mask_word.py
 
-![Output of mask_word.py](1.png) (2.png) (3.png)
+![Output of mask_word.py - 1 of 3](1.png) 
+
+![Output of mask_word.py - 2 of 3](2.png) 
+
+![Output of mask_word.py - 3 of 3](3.png) 
 
 The neighbors for the word "cell" in the sentence above are different for the different contexts. Note all neighbors are words in BERT vocab. This test was done using pretrained model - bert-base-cased
 
