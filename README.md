@@ -10,8 +10,6 @@ We can use this for a variety of tasks
 *Install pytorch first. This link goes through the details
 *Activate the environment if using conda
 
-* Run third.sh - _this will install anaconda, pytorch._
-
 # Usage 
 * python mask_word.py
 
