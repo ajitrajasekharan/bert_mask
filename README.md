@@ -12,7 +12,7 @@ We can use this for a variety of tasks
 * Activate the environment if using conda
 
 # Usage 
-* python mask_word.py
+* python mask_word.py  _(default uses bert-base-cased model. To use custom model or other model see python mask_word.py -h for options)_ 
 
 * To mask a word just type in "entity" in the sentence in the place of a word _(this is useful especically if the input word could potentially break into subwords)_
 
