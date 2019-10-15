@@ -7,7 +7,7 @@ We can use this for a variety of tasks
 * To harvest phrases of a particular entity type (all phrases beloing to a particular entity type, are likely to share common neighbor terms in the top k neighbors in a sentence a term of that entity type occurs. 
 
 # Install steps
-*Install pytorch first. This link (https://github.com/ajitrajasekharan/multi_gpu_test)  goes has installation instructions for pytorch
+*Install pytorch first. This link (https://github.com/ajitrajasekharan/multi_gpu_test)   has installation instructions for pytorch
 *Activate the environment if using conda
 
 # Usage 
