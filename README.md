@@ -1,7 +1,7 @@
 # bert_mask
 
 This is an sample program illustrating BERTs masked language model. 
-Given a sentence as input, we can specify any term (could be a subword of a word) to mask and examine its neighbors, where the neighbors are terms in BERT's vocab.
+Given a sentence as input, we can specify any term _(could be a subword of a word)_ to mask and examine its neighbors, where the neighbors are terms in BERT's vocab.
 We can use this for a variety of tasks
 * To fill in missing puncuations in a sentence. 
 * To harvest phrases of a particular entity type _(all phrases beloing to a particular entity type, are likely to share common neighbor terms in the top k neighbors in a sentence a term of that entity type occurs)_. 
@@ -14,7 +14,7 @@ We can use this for a variety of tasks
 # Usage 
 * python mask_word.py
 
-* To mask a word just type in "entity" in the sentence in the place of a word _(this is useful especically if the input word could potentially break into subwords)
+* To mask a word just type in "entity" in the sentence in the place of a word _(this is useful especically if the input word could potentially break into subwords)_
 
 * To mask a phrase, just input the term "entity" in the sentence in place of it
 
