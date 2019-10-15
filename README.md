@@ -14,6 +14,12 @@ We can use this for a variety of tasks
 # Usage 
 * python mask_word.py
 
+* To mask a word just type in "entity" in the sentence in the place of a word _(this is useful especically if the input word could potentially break into subwords)
+
+* To mask a phrase, just input the term "entity" in the sentence in place of it
+
+* To mask a specific subword of a word, type in full sentence, and then used the tokenized output that is displayed to choose the speicific subword to mask
+
 # Sample outputs
 A sentence "He went to prison _cell_ with his _cell_ phone to extract blood _cell_ samples from inmates" with the word cell having different senses. 
 
@@ -24,6 +30,7 @@ A sentence "He went to prison _cell_ with his _cell_ phone to extract blood _cel
 ![Output of mask_word.py - 3 of 3](3.png) 
 
 The neighbors for the word "cell" in the sentence above are different for the different contexts. Note all displayed neighbors are words in BERT vocab. This test was done using pretrained model - bert-base-cased
+
 
 
 # License
