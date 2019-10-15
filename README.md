@@ -5,7 +5,7 @@ Given a sentence as input, we can specify any term (could be a subword of a word
 We can use this for a variety of tasks
 * To fill in missing puncuations in a sentence. 
 * To harvest phrases of a particular entity type (all phrases beloing to a particular entity type, are likely to share common neighbor terms in the top k neighbors in a sentence a term of that entity type occurs. 
-* In general any task where the sentence context of a word/phrase taking would be useful. 
+* In general any task where the sentence context of a word/phrase would be useful. 
 
 # Install steps
 *Install pytorch first. This link (https://github.com/ajitrajasekharan/multi_gpu_test)   has installation instructions for pytorch
