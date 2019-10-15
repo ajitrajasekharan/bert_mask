@@ -1,6 +1,6 @@
 # bert_mask
 
-This is an example program illustrating BERTs masked language model. 
+This is an sample program illustrating BERTs masked language model. 
 Given a sentence as input, we can specify any term (could be a subword of a word) to mask and examine its neighbors, where the neighbors are terms in BERT's vocab.
 We can use this for a variety of tasks
 * To fill in missing puncuations in a sentence. 
