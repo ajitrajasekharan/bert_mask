@@ -4,7 +4,7 @@ This is an example program illustrating BERTs masked language model.
 Given a sentence as input, we can specify any term (could be a subword of a word) to mask and examine its neighbors, where the neighbors are terms in BERT's vocab.
 We can use this for a variety of tasks
 * To fill in missing puncuations in a sentence. 
-* To harvest phrases of a particular entity type (all phrases beloing to a particular entity type, are likely to share common neighbor terms in the top k neighbors in a sentence a term of that entity type occurs. 
+* To harvest phrases of a particular entity type _(all phrases beloing to a particular entity type, are likely to share common neighbor terms in the top k neighbors in a sentence a term of that entity type occurs)_. 
 * In general any task where the sentence context of a word/phrase would be useful. 
 
 # Install steps
