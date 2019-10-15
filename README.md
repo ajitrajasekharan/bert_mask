@@ -16,6 +16,7 @@ We can use this for a variety of tasks
 * python mask_word.py
 
 ![Output of mask_word.py](1.png) (2.png) (3.png)
+
 The neighbors for the word "cell" in the sentence above are different for the different contexts. Note all neighbors are words in BERT vocab. This test was done using pretrained model - bert-base-cased
 
 
