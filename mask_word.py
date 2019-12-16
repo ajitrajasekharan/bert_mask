@@ -1,5 +1,5 @@
 import torch
-from pytorch_transformers import *
+from transformers import *
 import pdb
 import operator
 from collections import OrderedDict
