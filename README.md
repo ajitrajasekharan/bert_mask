@@ -37,6 +37,8 @@ BERT vector and vocab files
 https://drive.google.com/file/d/1X1mE8OZVnYZnFXgZx7Wfaop7_pOLDGnP/view?usp=sharing
 https://drive.google.com/file/d/1vBEOR25_ajAoNmtgoy-TFJBX-4wj5WF_/view?usp=sharing
 
+Roberta vector and vocab files
+https://drive.google.com/file/d/1izKfjzqCf1QEifSMsnaDmZt7NVe0UfpU/view?usp=sharing
 
 
 # License
