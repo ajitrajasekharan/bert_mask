@@ -10,7 +10,7 @@ import argparse
 
 import logging
 
-DEFAULT_MODEL_PATH='bert-base-cased'
+DEFAULT_MODEL_PATH='roberta-base'
 DEFAULT_TO_LOWER=False
 DEFAULT_TOP_K = 20
 ACCRUE_THRESHOLD = 1
