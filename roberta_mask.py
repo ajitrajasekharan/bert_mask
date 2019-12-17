@@ -48,12 +48,19 @@ def get_mask_index(limit):
 
 
 def perform_task(model,tokenizer,top_k,accrue_threshold,text):
-    pdb.set_trace()
     tokenized_text = tokenizer.tokenize(text)
     indexed_tokens = tokenizer.convert_tokens_to_ids(tokenized_text)
 
+
     # Create the segments tensors.
     segments_ids = [0] * len(tokenized_text)
+
+
+    #pdb.set_trace()
+    #segments_ids = [0] * 50265
+    #indexed_tokens = [ i for i in range(50265)]
+
+    
 
     masked_index = 0
 
@@ -68,6 +75,7 @@ def perform_task(model,tokenizer,top_k,accrue_threshold,text):
         print(dstr)
         masked_index = get_mask_index(len(tokenized_text))
 
+    masked_index = 1
     tokenized_text[masked_index] = "[MASK]"
     indexed_tokens[masked_index] = 103
     print(tokenized_text)
@@ -81,17 +89,30 @@ def perform_task(model,tokenizer,top_k,accrue_threshold,text):
     with torch.no_grad():
         predictions = model(tokens_tensor, segments_tensors)
         for i in range(len(predictions[0][0,masked_index])):
-            if (float(predictions[0][0,masked_index][i].tolist()) > accrue_threshold):
-                tok = tokenizer.convert_ids_to_tokens([i])[0]
-                results_dict[tok] = float(predictions[0][0,masked_index][i].tolist())
+           tok = tokenizer.convert_ids_to_tokens([i])[0]
+           results_dict[tok] = float(predictions[0][0,masked_index][i].tolist())
 
     k = 0
     sorted_d = OrderedDict(sorted(results_dict.items(), key=lambda kv: kv[1], reverse=True))
+    buckets_dict = {}
+    fp = open("results.txt","w")
     for i in sorted_d:
-        print(i,sorted_d[i])
         k += 1
-        if (k > top_k):
-            break
+        if (k < top_k):
+            print(i,sorted_d[i])
+        fp.write(str(i) + " " + str(sorted_d[i]) + "\n")
+        val = round(sorted_d[i],0)
+        if (val in buckets_dict):
+             buckets_dict[val] += 1
+        else:
+             buckets_dict[val] = 1
+    fp.close()
+
+    fp = open("neigh.txt","w")
+    sorted_d = OrderedDict(sorted(buckets_dict.items(), key=lambda kv: kv[0], reverse=False))
+    for i in sorted_d:
+	    fp.write(str(i) + " " + str(sorted_d[i]) + "\n")
+    fp.close()
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Predicting neighbors to a word in sentence using BERTMaskedLM. Neighbors are from BERT vocab (which includes subwords and full words). Type in a sentence and then choose a position to mask or type in a sentence with the word entity in the location to apply a mask ',formatter_class=argparse.ArgumentDefaultsHelpFormatter)
