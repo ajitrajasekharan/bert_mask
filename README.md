@@ -35,7 +35,7 @@ The neighbors for the word "cell" in the sentence above are different for the di
 BERT vector and vocab files
 
 https://drive.google.com/file/d/1X1mE8OZVnYZnFXgZx7Wfaop7_pOLDGnP/view?usp=sharing
-https://drive.google.com/open?id=1vBEOR25_ajAoNmtgoy-TFJBX-4wj5WF_
+https://drive.google.com/file/d/1vBEOR25_ajAoNmtgoy-TFJBX-4wj5WF_/view?usp=sharing
 
 
 
