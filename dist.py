@@ -42,8 +42,8 @@ def read_terms(terms_file):
 class BertEmbeds:
     def __init__(self, model_path,do_lower, terms_file,embeds_file,cache_embeds):
         do_lower = True if do_lower == 1 else False
-        #self.tokenizer = BertTokenizer.from_pretrained(model_path,do_lower_case=do_lower)
-        self.tokenizer = RobertaTokenizer.from_pretrained(model_path)
+        self.tokenizer = BertTokenizer.from_pretrained(model_path,do_lower_case=do_lower)
+        #self.tokenizer = RobertaTokenizer.from_pretrained(model_path)
         #model = RobertaForMaskedLM.from_pretrained(model_path)
         #print(self.tokenizer.vocab_size)
         #self.dump_vocab()

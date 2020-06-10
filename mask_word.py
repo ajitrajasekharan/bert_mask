@@ -58,7 +58,7 @@ def perform_task(model,tokenizer,top_k,accrue_threshold,text):
     masked_index = 0
 
     for i in range(len(tokenized_text)):
-        if (tokenized_text[i] == "Ġentity"):
+        if (tokenized_text[i] == "entity"):
             masked_index = i
             break
     if (masked_index == 0):
