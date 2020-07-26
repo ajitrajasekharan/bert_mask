@@ -9,8 +9,7 @@ import sys
 import logging
 logging.basicConfig(level=logging.INFO)
 
-#PATH='/data/ajit/bert_pretrain_test/pytorch-transformers/examples/lm_finetuning/my_test/celltypes_lm4'
-#PATH='/data/ajit/trained_models/bert_clinical_cased/model'
+
 PATH='bert-base-cased'
 # Load pre-trained model tokenizer (vocabulary)
 tokenizer = BertTokenizer.from_pretrained(PATH,do_lower_case=False)
