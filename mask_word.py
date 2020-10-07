@@ -48,7 +48,7 @@ def get_mask_index(limit):
 
 
 def perform_task(model,tokenizer,top_k,accrue_threshold,text):
-    pdb.set_trace()
+    text = '[CLS]' + text + '[SEP]' 
     tokenized_text = tokenizer.tokenize(text)
     indexed_tokens = tokenizer.convert_tokens_to_ids(tokenized_text)
 
