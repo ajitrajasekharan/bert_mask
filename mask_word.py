@@ -6,21 +6,22 @@ from collections import OrderedDict
 import sys
 import traceback
 import argparse
+import string
 
 
 import logging
 
-DEFAULT_MODEL_PATH='bert-base-cased'
+DEFAULT_MODEL_PATH='bert-large-cased'
 DEFAULT_TO_LOWER=False
 DEFAULT_TOP_K = 20
 ACCRUE_THRESHOLD = 1
 
 def init_model(model_path,to_lower):
     logging.basicConfig(level=logging.INFO)
-    #tokenizer = BertTokenizer.from_pretrained(model_path,do_lower_case=to_lower)
-    #model = BertForMaskedLM.from_pretrained(model_path)
-    tokenizer = RobertaTokenizer.from_pretrained(model_path,do_lower_case=to_lower)
-    model = RobertaForMaskedLM.from_pretrained(model_path)
+    tokenizer = BertTokenizer.from_pretrained(model_path,do_lower_case=to_lower)
+    model = BertForMaskedLM.from_pretrained(model_path)
+    #tokenizer = RobertaTokenizer.from_pretrained(model_path,do_lower_case=to_lower)
+    #model = RobertaForMaskedLM.from_pretrained(model_path)
     model.eval()
     return model,tokenizer
 
@@ -32,6 +33,18 @@ def get_sent():
     else:
         #return '[CLS] ' + sent + '[SEP]'
         return  sent
+
+def read_descs(file_name):
+    ret_dict = {}
+    with open(file_name) as fp:
+        line = fp.readline().rstrip("\n")
+        if (len(line) >= 1):
+            ret_dict[line] = 1
+        while line:
+            line = fp.readline().rstrip("\n")
+            if (len(line) >= 1):
+                ret_dict[line] = 1
+    return ret_dict
 
 
 def get_mask_index(limit):
@@ -88,6 +101,8 @@ def perform_task(model,tokenizer,top_k,accrue_threshold,text):
     k = 0
     sorted_d = OrderedDict(sorted(results_dict.items(), key=lambda kv: kv[1], reverse=True))
     for i in sorted_d:
+        if (i in string.punctuation or i.startswith('##') or len(i) == 1 or i.startswith('.') or i.startswith('[')):
+            continue
         print(i,sorted_d[i])
         k += 1
         if (k > top_k):
